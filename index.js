@@ -28,11 +28,11 @@ console.log("%c----------", "color: red")
 
 
 // ***** Question 3 *****
-function drinkWater(current_thirst_level) {
+function drinkWater(currentThirstLevel) {
   console.log("Man I Sure am thirsty")
-  current_thirst_level --
+  currentThirstLevel --
   console.log("Ahh that hits the spot")
-  return current_thirst_level
+  return currentThirstLevel
 }
 // *** Uncomment the lines below to test
 console.log("%cQuestion 3", "color: red") 
@@ -93,10 +93,17 @@ console.log("%c----------", "color: red")
 //   console.log(user.name);
 // }
 
+// function printNameAndPhones(users){
+//   users.map(function (user) {
+//     console.log(user.name);
+//     console.log(user.name);
+//   })
+// }
 function printNameAndPhones(users){
-  users.map(function (user) {
-    console.log(user.name);
-    console.log(user.name);
+  users.forEach(function (userObj) {
+    console.log(userObj.name)
+    console.log(`Cell: ${userObj.phones.cell}`)
+    console.log(`Office: ${userObj.phones.office}`)
   })
 }
 // *** Uncomment the lines below to test
@@ -176,11 +183,12 @@ function nowServing(line) {
 }
 
 const line = []
-
+let ticketNumber = 0
 // ***** Scope & Closures - Question 1 *****
 function takeATicketNumber(line) {
-  line.push(line.length + 1)
-  return `Welcome ${name}. You are ticket number ${line.length}`
+  ticketNumber ++
+  line.push(ticketNumber)
+  return `Welcome. You are ticket number ${ticketNumber}`
 }
 
 // *** Uncomment the lines below to test
